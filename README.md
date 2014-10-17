@@ -8,7 +8,7 @@ First off, I'll begin by saying that this is NOT a project. This is just a small
 To compile this code, use the following command (assuming you have Emscripten properly installed and added to your path):
 
 ```sh
-emcc -O3 -s USE_GLFW=3 -s LEGACY_GL_EMULATION=1 test.cpp -o out.html
+emcc -O3 -s USE_GLFW=3 -s LEGACY_GL_EMULATION=1 test.c -o out.html
 ```
 
 This will create a HTML file called `out.html` and 2 other files (JavaScript and memory file). Then you move to the directory where the output is located and run:
