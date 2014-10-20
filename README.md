@@ -17,7 +17,4 @@ This will create a HTML file called `out.html` and 2 other files (JavaScript and
 python -m SimpleHTTPServer 8080
 ```
 
-Finally, open your web browser to `localhost:8080` and the code will run! 
-
-#### WARNING!
-This code runs much, much better in Firefox. Chromium web browsers take forever to ready the program.
+Finally, open your web browser to `localhost:8080` and select the "out.html" file.
