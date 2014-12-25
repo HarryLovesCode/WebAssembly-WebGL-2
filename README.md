@@ -15,8 +15,10 @@ To compile this code:
 - Clone this directory wherever you want
   - Use the command `git clone "https://github.com/IcyTesseract/Emscripten-GLFW3-Basic-Program.git"`
 - `cd` to the root of the newly cloned directory
+- Make a build directory
+  - `mkdir build`
 - Compile using Emscripten
-  - `emcc -O3 -s USE_GLFW=3 -s LEGACY_GL_EMULATION=1 src/main.c -o build/out.html`
+  - `emcc -O3 -s USE_GLFW=3 -s LEGACY_GL_EMULATION=1 src/main.c -o build/index.html`
 
 Finally, you should go ahead and start a web server as some browsers do not support browser file access. The easiest way to do this is to launch Python (if you have it) using the following command:
 
