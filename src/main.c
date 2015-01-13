@@ -9,7 +9,7 @@ void errorCallback(int error, const char *description) {
     fputs(description, stderr);
 }
 
-void renderGame() 
+void renderGame()
 {
 	glClear(GL_COLOR_BUFFER_BIT);
 
@@ -41,7 +41,7 @@ void renderGame()
 
 int main(int argc, char **argv) {
 	glfwSetErrorCallback(errorCallback);
-	
+
 	if (!glfwInit()) {
 		fputs("Failed to initialize GLFW3!", stderr);
 		exit(EXIT_FAILURE);
@@ -57,7 +57,7 @@ int main(int argc, char **argv) {
 
 	glfwMakeContextCurrent(window);
 	glClearColor(0.0, 0.0, 0.0, 1.0);
-	
+
 	/* Initialize main loop which is the same as:
 	 * window.requestAnimationFrame(renderGame)
 	 * in this case.
