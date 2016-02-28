@@ -11,12 +11,12 @@ void errorCallback(int error, const char *description) {
 
 void renderGame()
 {
-	glClear(GL_COLOR_BUFFER_BIT);
+    glClear(GL_COLOR_BUFFER_BIT);
 
-	float ratio;
-	int width, height;
+    float ratio;
+    int width, height;
 
-	glfwGetFramebufferSize(window, &width, &height);
+    glfwGetFramebufferSize(window, &width, &height);
     ratio = width / (float) height;
     glViewport(0, 0, width, height);
     glClear(GL_COLOR_BUFFER_BIT);
@@ -35,32 +35,32 @@ void renderGame()
     glVertex3f(0.f, 0.6f, 0.f);
     glEnd();
 
-	glfwSwapBuffers(window);
-	glfwPollEvents();
+    glfwSwapBuffers(window);
+    glfwPollEvents();
 }
 
 int main(int argc, char **argv) {
-	glfwSetErrorCallback(errorCallback);
+    glfwSetErrorCallback(errorCallback);
 
-	if (!glfwInit()) {
-		fputs("Failed to initialize GLFW3!", stderr);
-		exit(EXIT_FAILURE);
-	}
+    if (!glfwInit()) {
+        fputs("Failed to initialize GLFW3!", stderr);
+        exit(EXIT_FAILURE);
+    }
 
-	window = glfwCreateWindow(640, 480, "Emscripten", NULL, NULL);
+    window = glfwCreateWindow(640, 480, "Emscripten", NULL, NULL);
 
-	if (!window) {
-		fputs("Failed to create GLFW3 window!", stderr);
-		glfwTerminate();
-		exit(EXIT_FAILURE);
-	}
+    if (!window) {
+        fputs("Failed to create GLFW3 window!", stderr);
+        glfwTerminate();
+        exit(EXIT_FAILURE);
+    }
 
-	glfwMakeContextCurrent(window);
-	glClearColor(0.0, 0.0, 0.0, 1.0);
+    glfwMakeContextCurrent(window);
+    glClearColor(0.0, 0.0, 0.0, 1.0);
 
-	/* Initialize main loop which is the same as:
-	 * window.requestAnimationFrame(renderGame)
-	 * in this case.
-	 */
-	emscripten_set_main_loop(renderGame, 0, 0);
+    /* Initialize main loop which is the same as:
+     * window.requestAnimationFrame(renderGame)
+     * in this case.
+     */
+    emscripten_set_main_loop(renderGame, 0, 0);
 }

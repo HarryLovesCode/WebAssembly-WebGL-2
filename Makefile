@@ -4,8 +4,8 @@ SRCS = main.c
 FILES = $(addprefix src/, $(SRCS))			# Add 'src/' to each source
 OBJS = $(FILES:.c=.o)						# Modify file extensions of FILES
 
-EOPT = USE_GLFW=3 LEGACY_GL_EMULATION=1 	# Emscripten specific options
-EOPTS = $(addprefix -s $(EMPTY), $(EOPT)) 	# Add '-s ' to each option
+EOPT = USE_GLFW=3 LEGACY_GL_EMULATION=1		# Emscripten specific options
+EOPTS = $(addprefix -s $(EMPTY), $(EOPT))	# Add '-s ' to each option
 
 # Builds necessary files
 build: $(OBJS)
