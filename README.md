@@ -1,25 +1,15 @@
-Emscripten GLFW3 Basic Program
+WebAssembly WebGL 2
 ===
 
-Hello,
+This repository is NOT a project, it is more of a getting started / simple tech demo. This demonstrates Emscripten compiling code then outputting `wasm` to run in a WebAssembly capable web browser that supports WebGL 2. That said, no WebGL 2 specific code is currently in the repository.
 
-First off, let me preface this `README.md` by saying that the repository here is NOT a project. Instead, it is a small example of GLFW3 running in the web browser having been ported using Emscripten. You can find the tutorial page for GLFW3 [here](http://www.glfw.org/docs/latest/quick.html).
+# Compilation and Serving
 
-Take note: this is written in the C language and it DOES NOT use modern OpenGL (programmable pipeline). Instead, it is using deprecated OpenGL just like the small "Getting Started" page shows on the GLFW3 website. It was NOT my intention to show how to port a full application, but rather to just create a working demonstration.
-
-To compile this code:
-- Make sure that Emscripten is added to your path
-  - If you're on Linux or Mac, make sure that you `cd` to the root directory of "emsdk_portable"
-  - Issue the following command `source ./emsdk_env.sh`
-  - DO NOT CLOSE THE TERMINAL WINDOW
-- Clone this directory wherever you want
-  - Use the command `git clone "https://github.com/IcyTesseract/Emscripten-GLFW3-Basic-Program.git"`
+- Follow the steps [here](http://webassembly.org/getting-started/developers-guide/) to get ready to comile WebAssembly
+- Clone this directory wherever you want (`git clone "https://github.com/ThisIsHarryG/WebAssembly-WebGL-2"`)
 - `cd` to the root of the newly cloned directory
 - Use the makefile to either build, clean up, or make a distribution version (build directory only) of the repo
     - Build: `make`
     - Clean: `make clean`
-    - Build then clean up object files: `make dist`
-
-Finally, you should go ahead and start a web server as some browsers do not support browser file access. The easiest way to do this is to launch Python (if you have it) using the following command:
-
-`python -m SimpleHTTPServer 8080` then open your browser to `localhost:8080` (Firefox based browsers are best) and tada!
+    - Build, but remove objects leaving the `build` dir: `make dist`
+- You can then use `python -m SimpleHTTPServer 8080` and open your browser to `localhost:8080`.
