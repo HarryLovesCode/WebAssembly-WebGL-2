@@ -7,7 +7,7 @@ EOPTS = $(addprefix -s $(EMPTY), $(EOPT))	# Add '-s ' to each option
 
 # Builds necessary files
 build: $(OBJS)
-		mkdir build
+		-mkdir build
 		$(CC) $(FILES) -O3 $(EOPTS) -o build/index.html
 
 # Removes object files, but leaves build for serving
