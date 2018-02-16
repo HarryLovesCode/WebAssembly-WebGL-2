@@ -5,7 +5,7 @@ This repository is NOT a project, it is more of a getting started / simple tech 
 
 # Compilation and Serving
 
-- Follow the steps [here](http://webassembly.org/getting-started/developers-guide/) to get ready to comile WebAssembly
+- [Download or Compile the Toolchain](http://webassembly.org/getting-started/developers-guide/).
 - Clone this directory wherever you want (`git clone "https://github.com/HarryLovesCode/WebAssembly-WebGL-2"`)
 - `cd` to the root of the newly cloned directory
 - Use the makefile to either build, clean up, or make a distribution version (build directory only) of the repo
