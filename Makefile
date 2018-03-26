@@ -14,9 +14,9 @@ build: $(OBJS)
 
 # Removes object files, but leaves build for serving
 dist: build
-		rm $(OBJS)
+		rm -f $(OBJS)
 
 # Cleans up object files and build directory
 clean:
 		rm -rf build
-		rm $(OBJS)
+		rm -f $(OBJS)
