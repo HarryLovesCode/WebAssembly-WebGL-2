@@ -2,12 +2,14 @@ CC = emcc
 SRCS = main.c
 FILES = $(addprefix src/, $(SRCS)) # Add 'src/' to each source
 OBJS = $(FILES:.c=.o) # Modify file extensions of FILES
-EOPT = USE_WEBGL2=1 FULL_ES3=1 USE_GLFW=3 # Emscripten specific options
+EOPT = USE_WEBGL2=1 FULL_ES3=1 USE_GLFW=3 WASM=1 # Emscripten specific options
 EOPTS = $(addprefix -s $(EMPTY), $(EOPT))	# Add '-s ' to each option
+
+.PHONY: dist clean
 
 # Builds necessary files
 build: $(OBJS)
-		mkdir build
+		mkdir -p build
 		$(CC) $(FILES) -O3 $(EOPTS) -o build/index.html
 
 # Removes object files, but leaves build for serving
